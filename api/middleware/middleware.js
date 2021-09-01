@@ -2,7 +2,8 @@ const { getById } = require("./../users/users-model");
 const yup = require("yup");
 
 function logger(req, res, next) {
-  console.log(`[${req.method}]: [${req.url}]`);
+  const timestamp = Date.now();
+  console.log(`[${req.method}] | [${req.url}] | [${new Date(timestamp)}]`);
   next();
 }
 
